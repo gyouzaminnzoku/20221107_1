@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light That Burns The Sky</title>
+  <link rel="stylesheet" href="kami.css">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    
+  
+</head>
+<a-camera gps-camera rotation-reader> </a-camera>
+  <div id="humMenu" style="position: fixed; top: 0px">
+    <input id="humCheck" type="checkbox">
+    <label id="humOpen" for="humCheck"><img src="bars_24.png" alt="メニュー" width="34" height="28"></label>
+    <label id="humClose" for="humCheck"></label>
+    <nav>
+      <!--<ul class="inner">
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">会社概要</a></li>
+        <li><a href="#">事業内容</a></li>
+        <li><a href="#">アクセス</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>-->
+      <div class="Calyrex">
+        <div class="aaaaa">
+          <input type="text" id="tbox" class="nice-textbox" placeholder="文字を入力">
+        </div>
+        
+        <div class="Ho-Oh">
+          <!--<input type="button" id="b1">-->
+          <button class="btn--orange" onclick="ano()">OUT</button>
+          <button class="btn--2" onclick="run()">IN</button>
+        </div>
+      </div>
+      
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+        
+        <p>
+          <!--<input class="btn--3" type="file" name="upfile" id="upfile" accept="image/*"/>-->
+          <span style="color: #ff0000;" data-mce-style="color: #ff0000;"><div><img id="thumbnail" src=""></div></span>
+        </p>
+        
+        <label class="btn--3" for="upfile">
+            写真を選択
+        <input type="file" id="upfile" name="upfile" accept="image/*">
+        </label>
+      
+        
+        
+        <!--<p><input type="submit" name="save" value="保存" /></p>-->
+    </form>
+    <div class="Embedded_Tower">
+      <button class="Rayquaza" onclick="Rayquaza()">写真を消す</button>
+    </div>
+    </nav>
+  </div>
+
+  <!--<div id="message">
+    大鎧ドラゴンがあらわれた！
+  </div>-->
+
+    <body style="margin: 0; overflow:hidden;">
+        <a-scene
+          vr-mode-ui="enabled: false"
+          embedded
+          arjs="sourceType: webcam; debugUIEnabled: false;"
+        ><!--<img id="kyubi" class="kyubi" src="./0-13.png">-->
+          <!--<a-text
+          id="id"
+            value="aaa."
+            look-at="[gps-camera]"
+            scale="50 50 50"
+            gps-entity-place="latitude: 36.14440307353002 ; longitude: 139.38239471376482;"
+          ></a-text>-->
+          <a-entity id="nihon" class="Dracozolt" mb-text position="0 1.4 -1.4" scale="0.4 0.4 0.4" data-text=""></a-entity>
+          <a-entity id="kyu2" mb-text2 position="0 1.7 -1.5" scale="0.25 0.25 0.25" data-text=""></a-entity>
+          
+          <!--<a-entity id="nihon2" mb-text position="0.5 1.5 -1" scale="50 50 50" 
+          gps-entity-place="latitude: 36.14440307353002 ; longitude: 139.38239471376482;" 
+          data-text="新.こんにちは世界(script)🌝"></a-entity>-->
+          <!--<a-image
+            id="kyu"
+                class="#kyu"
+                src="./0-13.png"
+                position="1 1.6 -2.5"
+                ></a-image>
+        <div id="inkyu"></div>-->
+        
+          <!--<a-camera gps-camera rotation-reader> </a-camera>-->
+        </a-scene>
+        <!--<form action="upload.php" method="post" enctype="multipart/form-data">
+            <p>
+              <input type="file" name="upfile" id="upfile" accept="image/*"/>
+              <span style="color: #ff0000;" data-mce-style="color: #ff0000;"><div><img id="thumbnail" src=""></div></span>
+            </p>
+            <p><input type="submit" name="save" value="保存" /></p>
+        </form>-->
+        <!--<div style="position: fixed; bottom: 150px;">-->
+          <!-- onclickの指定が誤っているので書き直し -->
+          <!-- <input type="button" id="b1" value="change" onclick="click1"> -->
+          <!--</div>-->
+          <!--<label for="upfile">
+            ファイルを選択して下さい
+            <input type="file" id="upfile">
+            </label>-->
+            
+    </body>
+           <!-- <script>
+                function aframeMutlByte(){
+                  //console.log("koko")
+                  
+                  //nihon.removeAttribute("mb-text");
+                  
+                  //let hensu=document.createElement("div");
+                  //hensu.textContent="hello";
+                  //document.getElementById("kk").appendChild(hensu);
+                    document.querySelectorAll('[mb-text]').forEach(mb_text2=>{
+                        console.log(mb_text2.dataset.text)
+                        let text  =mb_text2.dataset.text
+                        let text_cnt = text.length
+                        let width = text_cnt*1.4
+                        let height= 1.6
+                        let cvs = document.createElement('canvas')
+                        let ctx = cvs.getContext('2d')
+                        cvs.width = width*100
+                        cvs.height = height*100
+                        ctx.fillStyle = "rgb(50, 200, 30)"
+                        ctx.font = '100pt Arial'
+                        ctx.fillText(text,0,125)
+                
+                        let base64 = cvs.toDataURL("image/png")
+                        mb_text2.innerHTML=`<a-image scale="${(width)/10} ${height/10} 1" src="${base64}"></a-image>`
+                    })
+                }
+                    
+                </script>-->
+                <script>
+                    $('#upfile').change(function(){
+                      if (this.files.length > 0) {
+                        console.log("iruyo");
+                        // 選択されたファイル情報を取得
+                        var file = this.files[0];
+                        
+                        // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
+                        var image =new Image();
+                        var reader = new FileReader();
+                        
+                        reader.readAsDataURL(file);
+                        
+                        reader.onload = function() {
+                          //let nihon2=document.getElementById("nihon2");
+                          //var new_kyu=document.createElement('a-image id="kyu" class="#kyu" src="../0-13.png" position="1 1.6 -2.5"')
+                          //
+                          //let inkyu=document.getElementById("inkyu");
+                          //inkyu.innerHTML='<a-image id="kyu" class="#kyu" src="../0-13.png" position="1 1.6 -2.5" ></a-image>';
+                          $('#kyu').attr('src', reader.result );
+                          image.src=reader.result;
+                          image.onload=function(){
+                            document.querySelectorAll('[mb-text2]').forEach(mb_text2=>{
+                            mb_text2.innerHTML=`<a-image id="Jirachi" scale="${(image.naturalWidth)/image.naturalHeight} 1 1" src="${reader.result}"></a-image>`
+                            })
+                          }
+                        }
+                      }
+                    });
+                    </script>
+                <script src="kami.js"></script>
+                
+</body>
+</html>

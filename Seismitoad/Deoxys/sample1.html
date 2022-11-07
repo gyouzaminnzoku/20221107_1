@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="sample1.css">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+
+<nav id="nav">
+    <ul>
+        <div>
+            <input type="text" id="tbox" class="nice-textbox">
+          </div>
+          <div>
+            <!--<input type="button" id="b1">-->
+            <button class="btn--orange" onclick="ano()">kill</button>
+            <button class="btn--orange" onclick="run()">run</button>
+          </div>
+    </ul>
+</nav>
+
+<div id="hamburger">
+    <!-- 1番上の線 -->
+    <span class="inner_line" id="line1"></span>
+    <!-- 真ん中の線 -->
+    <span class="inner_line" id="line2"></span>
+    <!-- 1番下の線 -->
+    <span class="inner_line" id="line3"></span>
+</div>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-text
+      id="id"
+        value="aaa."
+        look-at="[gps-camera]"
+        scale="50 50 50"
+        gps-entity-place="latitude: 36.14440307353002 ; longitude: 139.38239471376482;"
+      ></a-text>
+      <a-entity id="nihon" mb-text position="0.5 2 -1" data-text=""></a-entity>
+      <a-entity id="nihon2" mb-text position="0.5 1.5 -1" data-text="新.こんにちは世界(script)🌝"></a-entity>
+      <a-camera gps-camera rotation-reader> </a-camera>
+    </a-scene>
+    <div style="position: fixed; bottom: 150px;">
+      <!-- onclickの指定が誤っているので書き直し -->
+      <!-- <input type="button" id="b1" value="change" onclick="click1"> -->
+      <div>
+</body>
+
+<script src="sample.js"></script>
+<script src="kami.js"></script>
